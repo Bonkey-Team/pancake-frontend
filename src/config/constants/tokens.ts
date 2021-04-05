@@ -12,6 +12,15 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
   },
+  bnky: {
+    symbol: 'BNKY',
+    address: {
+      56: '0xc46180bedf5c78e536f511d00e535ca8b63dfda8',
+      97: '',
+    },
+    decimals: 18,
+    projectLink: 'https://www.bonkey.org/',
+  },
   txl: {
     symbol: 'TXL',
     address: {

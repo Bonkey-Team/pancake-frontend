@@ -1,6 +1,7 @@
 import { MenuEntry } from '@pancakeswap-libs/uikit'
 
 const config: MenuEntry[] = [
+    /*
   {
     label: 'Home',
     icon: 'HomeIcon',
@@ -25,11 +26,13 @@ const config: MenuEntry[] = [
     icon: 'FarmIcon',
     href: '/farms',
   },
+ */
   {
     label: 'Pools',
     icon: 'PoolIcon',
     href: '/pools',
   },
+  /*
   {
     label: 'Lottery',
     icon: 'TicketIcon',
@@ -124,6 +127,7 @@ const config: MenuEntry[] = [
       },
     ],
   },
+ */
 ]
 
 export default config
