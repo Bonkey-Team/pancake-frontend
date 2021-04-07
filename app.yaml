@@ -8,12 +8,12 @@ runtime: nodejs12
 # https://cloud.google.com/appengine/docs/standard/python/mapping-custom-domains#:~:text=As%20a%20convenience%2C%20App%20Engine,have%20mapped%20to%20your%20app.
 
 
-service: finance 
+service: default 
 manual_scaling:
   instances: 1
 resources:
   cpu: 8
-  memory_gb: 4
+  memory_gb: 16 
   disk_size_gb: 10
 liveness_check:
   path: "/liveness_check"
@@ -28,3 +28,12 @@ readiness_check:
   failure_threshold: 2
   success_threshold: 2
   app_start_timeout_sec: 600
+handlers:
+# Serve all static files with url ending with a file extension
+- url: /(.*\..+)$
+  static_files: build/\1
+  upload: build/(.*\..+)$
+# Catch all handler to index.html
+- url: /.*
+  static_files: build/index.html
+  upload: build/index.html

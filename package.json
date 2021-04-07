@@ -2,6 +2,9 @@
   "name": "pancake-frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.x.x"
+  },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "gcp-build": "export NODE_ENV=production && CI=false react-scripts build",
