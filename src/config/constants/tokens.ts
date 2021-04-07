@@ -588,6 +588,16 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
   },
+  banana: {
+    symbol: 'BANANA',
+    address: {
+      56: '0x4ead21ad1d2b006ee99da08892d89b2c92d0a525',
+      97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
+  },
+
   bifi: {
     symbol: 'BIFI',
     address: {

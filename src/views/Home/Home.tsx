@@ -93,11 +93,13 @@ const Home: React.FC = () => {
           <Text>{TranslateString(578, 'The only Bonkey yield farm on Binance Smart Chain.')}</Text>
         </Hero>
         <div>
-{/*
           <Cards>
             <FarmStakingCard />
+{/*
             <LotteryCard />
+*/}
           </Cards>
+{/*
           <CTACards>
             <EarnAPYCard />
             <EarnAssetCard />
