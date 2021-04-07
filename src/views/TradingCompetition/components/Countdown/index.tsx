@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Flex, Skeleton, PocketWatchIcon, Text } from '@pancakeswap-libs/uikit'
+import { Flex, Skeleton, PocketWatchIcon, Text } from 'plkit'
 import useI18n from 'hooks/useI18n'
 import useGetBlockCountdown from 'hooks/useGetBlockCountdown'
 import getTimePeriods from 'utils/getTimePeriods'

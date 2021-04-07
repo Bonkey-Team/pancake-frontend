@@ -16,7 +16,7 @@ import {
   Text,
   TeamPlayerIcon,
   TrophyGoldIcon,
-} from '@pancakeswap-libs/uikit'
+} from 'plkit'
 import useI18n from 'hooks/useI18n'
 import easterPrizes, { Tiers, Rank } from 'config/constants/trading-competition/easter'
 

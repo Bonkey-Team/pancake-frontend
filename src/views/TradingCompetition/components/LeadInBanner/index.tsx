@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowForwardIcon, Box, Flex, LaurelLeftIcon, LaurelRightIcon } from '@pancakeswap-libs/uikit'
+import { ArrowForwardIcon, Box, Flex, LaurelLeftIcon, LaurelRightIcon } from 'plkit'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
 import PageContainer from 'components/layout/Container'

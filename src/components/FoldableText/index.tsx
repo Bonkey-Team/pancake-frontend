@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Flex, Text, FlexProps, ExpandableLabel } from '@pancakeswap-libs/uikit'
+import { Flex, Text, FlexProps, ExpandableLabel } from 'plkit'
 
 interface FoldableTextProps extends FlexProps {
   title?: string
