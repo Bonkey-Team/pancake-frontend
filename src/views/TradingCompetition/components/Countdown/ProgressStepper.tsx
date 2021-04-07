@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex } from '@pancakeswap-libs/uikit'
+import { Flex } from 'plkit'
 import useI18n from 'hooks/useI18n'
 import { CountdownProps } from '../../types'
 import Step from './Step'
