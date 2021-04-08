@@ -1,7 +1,6 @@
 import { MenuEntry } from 'plkit'
 
 const config: MenuEntry[] = [
-    /*
   {
     label: 'Home',
     icon: 'HomeIcon',
@@ -21,7 +20,6 @@ const config: MenuEntry[] = [
       },
     ],
   },
- */
   {
     label: 'Farms',
     icon: 'FarmIcon',
