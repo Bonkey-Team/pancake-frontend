@@ -19,6 +19,8 @@ const Wrapper = styled.div`
   margin-bottom: 32px;
 `
 
+// FIXME add historical page
+
 const Lottery: React.FC = () => {
   const lotteryContract = useLottery()
   const TranslateString = useI18n()
@@ -62,14 +64,14 @@ const Lottery: React.FC = () => {
         <Wrapper>
           <ButtonMenu activeIndex={activeIndex} onItemClick={handleClick} scale="sm" variant="subtle">
             <ButtonMenuItem>{TranslateString(716, 'Next draw')}</ButtonMenuItem>
-            <ButtonMenuItem>{TranslateString(718, 'Past draws')}</ButtonMenuItem>
+            <ButtonMenuItem>{TranslateString(718, '')}</ButtonMenuItem>
           </ButtonMenu>
         </Wrapper>
         <Divider />
         <PastLotteryDataContext.Provider
           value={{ historyError, historyData, mostRecentLotteryNumber, currentLotteryNumber }}
         >
-          {activeIndex === 0 ? <NextDrawPage /> : <PastDrawsPage />}
+          {activeIndex === 0 ? <NextDrawPage /> : <NextDrawPage />}
         </PastLotteryDataContext.Provider>
       </Page>
     </>

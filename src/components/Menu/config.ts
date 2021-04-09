@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.pancakeswap.finance',
+        href: 'https://exchange.bonkey.org',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.pancakeswap.finance/#/pool',
+        href: 'https://exchange.bonkey.org/#/pool',
       },
     ],
   },
@@ -30,12 +30,12 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: '/pools',
   },
-  /*
   {
     label: 'Lottery',
     icon: 'TicketIcon',
     href: '/lottery',
   },
+  /*
   {
     label: 'Collectibles',
     icon: 'NftIcon',

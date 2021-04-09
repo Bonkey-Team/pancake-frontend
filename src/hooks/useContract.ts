@@ -3,6 +3,7 @@ import useWeb3 from 'hooks/useWeb3'
 import {
   getBep20Contract,
   getCakeContract,
+  getBnkyContract,
   getBunnyFactoryContract,
   getBunnySpecialContract,
   getPancakeRabbitContract,
@@ -36,6 +37,12 @@ export const useCake = () => {
   const web3 = useWeb3()
   return useMemo(() => getCakeContract(web3), [web3])
 }
+
+export const useBnky = () => {
+  const web3 = useWeb3()
+  return useMemo(() => getBnkyContract(web3), [web3])
+}
+
 
 export const useBunnyFactory = () => {
   const web3 = useWeb3()

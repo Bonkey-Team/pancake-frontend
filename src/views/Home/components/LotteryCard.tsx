@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Heading, Card, CardBody, Button, useModal } from 'plkit'
 import { useWeb3React } from '@web3-react/core'
-import { getCakeAddress } from 'utils/addressHelpers'
+import { getBnkyAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
 import useI18n from 'hooks/useI18n'
 import useGetLotteryHasDrawn from 'hooks/useGetLotteryHasDrawn'
@@ -54,7 +54,7 @@ const LotteryCard = () => {
   const [onPresentApprove] = useModal(<PurchaseWarningModal />)
   const { claimAmount } = useTotalClaim()
   const { onMultiClaim } = useMultiClaimLottery()
-  const cakeBalance = useTokenBalance(getCakeAddress())
+  const cakeBalance = useTokenBalance(getBnkyAddress())
   const { handleApprove, requestedApproval } = useApproval(onPresentApprove)
 
   const handleClaim = useCallback(async () => {
@@ -74,7 +74,7 @@ const LotteryCard = () => {
     if (!allowance.toNumber()) {
       return (
         <Button width="100%" disabled={requestedApproval} onClick={handleApprove}>
-          {TranslateString(494, 'Approve CAKE')}
+          {TranslateString(494, 'Approve BNKY')}
         </Button>
       )
     }
@@ -85,7 +85,7 @@ const LotteryCard = () => {
     )
   }
 
-  const [onPresentBuy] = useModal(<BuyModal max={cakeBalance} tokenName="CAKE" />)
+  const [onPresentBuy] = useModal(<BuyModal max={cakeBalance} tokenName="BNKY" />)
 
   return (
     <StyledLotteryCard>
@@ -95,7 +95,7 @@ const LotteryCard = () => {
         </Heading>
         <CardImage src="/images/ticket.svg" alt="cake logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(552, 'CAKE to Collect')}:</Label>
+          <Label>{TranslateString(552, 'BNKY to Collect')}:</Label>
           <CakeWinnings />
         </Block>
         <Block>
