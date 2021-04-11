@@ -50,10 +50,12 @@ const config: MenuEntry[] = [
       color: 'warning',
     },
   },
+ */
   {
     label: 'Teams & Profile',
     icon: 'GroupsIcon',
     items: [
+        /*
       {
         label: 'Leaderboard',
         href: '/teams',
@@ -62,12 +64,14 @@ const config: MenuEntry[] = [
         label: 'Task Center',
         href: '/profile/tasks',
       },
+     */
       {
         label: 'Your Profile',
         href: '/profile',
       },
     ],
   },
+  /*
   {
     label: 'Info',
     icon: 'InfoIcon',

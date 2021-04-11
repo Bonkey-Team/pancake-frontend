@@ -41,15 +41,17 @@
     <meta name="twitter:title" content="🥞 BonkeySwap - A next evolution DeFi exchange on Binance Smart Chain (BSC)" />
   </head>
   <body>
-    <!-- GTAG (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=%REACT_APP_GTAG%"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
+      <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-190405778-1"
+      />
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-190405778-1');
+      </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

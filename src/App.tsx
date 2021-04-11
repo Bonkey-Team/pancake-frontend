@@ -4,6 +4,7 @@ import { ResetCSS } from 'plkit'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'
 import { useFetchPriceList, useFetchProfile, useFetchPublicData } from 'state/hooks'
+import ReactGA from 'react-ga'
 import GlobalStyle from './style/Global'
 import Menu from './components/Menu'
 import SuspenseWithChunkError from './components/SuspenseWithChunkError'
@@ -13,6 +14,13 @@ import EasterEgg from './components/EasterEgg'
 import Pools from './views/Pools'
 import GlobalCheckClaimStatus from './views/Collectibles/components/GlobalCheckClaimStatus'
 import history from './routerHistory'
+
+ReactGA.initialize('UA-190405778-1');
+
+history.listen((location, action) => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
