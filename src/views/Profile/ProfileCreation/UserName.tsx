@@ -21,7 +21,7 @@ import { useWeb3React } from '@web3-react/core'
 import { useToast } from 'state/hooks'
 import useWeb3 from 'hooks/useWeb3'
 import useI18n from 'hooks/useI18n'
-import useHasCakeBalance from 'hooks/useHasCakeBalance'
+import useHasBnkyBalance from 'hooks/useHasBnkyBalance'
 import debounce from 'lodash/debounce'
 import ConfirmProfileCreationModal from '../components/ConfirmProfileCreationModal'
 import useProfileCreation from './contexts/hook'
@@ -32,6 +32,8 @@ enum ExistingUserState {
   CREATED = 'created', // username has already been created
   NEW = 'new', // username has not been created
 }
+
+// FIXME username is going through pancake, we need to have our own service
 
 const profileApiUrl = process.env.REACT_APP_API_PROFILE
 const minimumCakeToRegister = new BigNumber(REGISTER_COST).multipliedBy(new BigNumber(10).pow(18))
@@ -67,7 +69,7 @@ const UserName: React.FC = () => {
   const [isValid, setIsValid] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState('')
-  const hasMinimumCakeRequired = useHasCakeBalance(minimumCakeToRegister)
+  const hasMinimumBnkyRequired = useHasBnkyBalance(minimumCakeToRegister)
   const [onPresentConfirmProfileCreation] = useModal(
     <ConfirmProfileCreationModal
       userName={userName}
@@ -240,9 +242,9 @@ const UserName: React.FC = () => {
       <Button onClick={onPresentConfirmProfileCreation} disabled={!isValid || !isUserCreated}>
         {TranslateString(842, 'Complete Profile')}
       </Button>
-      {!hasMinimumCakeRequired && (
+      {!hasMinimumBnkyRequired && (
         <Text color="failure" mt="16px">
-          {TranslateString(1098, `A minimum of ${REGISTER_COST} CAKE is required`, { num: REGISTER_COST })}
+          {TranslateString(1098, `A minimum of ${REGISTER_COST} BNKY is required`, { num: REGISTER_COST })}
         </Text>
       )}
     </>

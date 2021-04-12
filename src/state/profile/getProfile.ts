@@ -40,7 +40,8 @@ const getProfile = async (address: string): Promise<GetProfileResponse> => {
     }
 
     const profileResponse = await profileContract.methods.getUserProfile(address).call()
-    const { userId, points, teamId, tokenId, nftAddress, isActive } = transformProfileResponse(profileResponse)
+    const { userId, teamId, tokenId, nftAddress, isActive } = transformProfileResponse(profileResponse)
+    let { points} = transformProfileResponse(profileResponse)
     const team = await getTeam(teamId)
     const username = await getUsername(address)
 
@@ -48,7 +49,7 @@ const getProfile = async (address: string): Promise<GetProfileResponse> => {
     // so only fetch the nft data if active
     let nft: Nft
     if (isActive) {
-      const bunnyId = await rabbitContract.methods.getBunnyId(tokenId).call()
+      const bunnyId = await rabbitContract.methods.getWukongId(tokenId).call()
       nft = nfts.find((nftItem) => nftItem.bunnyId === Number(bunnyId))
 
       // Save the preview image in a cookie so it can be used on the exchange
@@ -61,6 +62,8 @@ const getProfile = async (address: string): Promise<GetProfileResponse> => {
         { domain: 'pancakeswap.finance', secure: true, expires: 30 },
       )
     }
+    
+    points /= 1000000000000000000
 
     const profile = {
       userId,

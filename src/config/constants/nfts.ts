@@ -1,6 +1,7 @@
 import { Nft } from './types'
 
 const Nfts: Nft[] = [
+    /*
   {
     name: "Cakeston Easter '21",
     description: 'Melting Easter eggs and melting hearts!',
@@ -65,71 +66,73 @@ const Nfts: Nft[] = [
     sortOrder: 999,
     bunnyId: 10,
   },
+ */
   {
-    name: 'Sleepy',
-    description: 'Aww, looks like eating pancakes all day is tough work. Sweet dreams!',
+    name: 'Picasso',
+    description: 'Pablo Ruiz Picasso was a Spanish painter, sculptor, printmaker, ceramicist and theatre designer who spent most of his adult life in France.',
     images: {
-      lg: 'sleepy-lg.png',
-      md: 'sleepy-md.png',
-      sm: 'sleepy-sm.png',
+      lg: 'picasso-lg.png',
+      md: 'picasso-md.png',
+      sm: 'picasso-sm.png',
       ipfs: 'https://gateway.pinata.cloud/ipfs/QmYD9AtzyQPjSa9jfZcZq88gSaRssdhGmKqQifUDjGFfXm/sleepy.png',
-      blur: 'sleepy-blur.png',
+      blur: 'picasso-blur.png',
     },
     sortOrder: 999,
     bunnyId: 5,
   },
   {
-    name: 'Sunny',
-    description: 'Sunny is always cheerful when there are pancakes around. Smile!',
+    name: 'Da Vinci',
+    description: 'Leonardo da Vinci was an Italian polymath of the High Renaissance who is widely considered one of the most diversely talented individuals ever to have lived.',
     images: {
-      lg: 'sunny-lg.png',
-      md: 'sunny-md.png',
-      sm: 'sunny-sm.png',
+      lg: 'davinci-lg.png',
+      md: 'davinci-md.png',
+      sm: 'davinci-sm.png',
       ipfs: 'https://gateway.pinata.cloud/ipfs/QmYD9AtzyQPjSa9jfZcZq88gSaRssdhGmKqQifUDjGFfXm/sunny.png',
-      blur: 'sunny-blur.png',
+      blur: 'davinci-blur.png',
     },
     sortOrder: 999,
     bunnyId: 9,
   },
   {
-    name: 'Churro',
-    description: "Don't let that dopey smile deceive you... Churro's a master CAKE chef!",
+    name: 'Van Gogh',
+    description: "Vincent Willem van Gogh was a Dutch post-impressionist painter who posthumously became one of the most famous and influential figures in the history of Western art. In a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life.",
     images: {
-      lg: 'churro-lg.png',
-      md: 'churro-md.png',
-      sm: 'churro-sm.png',
+      lg: 'vangogh-lg.png',
+      md: 'vangogh-md.png',
+      sm: 'vangogh-sm.png',
       ipfs: 'https://gateway.pinata.cloud/ipfs/QmYD9AtzyQPjSa9jfZcZq88gSaRssdhGmKqQifUDjGFfXm/churro.png',
-      blur: 'churro-blur.png',
+      blur: 'vangogh-blur.png',
     },
     sortOrder: 999,
     bunnyId: 8,
   },
   {
-    name: 'Dollop',
-    description: "Nommm... Oh hi, I'm just meditating on the meaning of CAKE.",
+    name: 'Salvador Dalí',
+    description: "Salvador Domingo Felipe Jacinto Dalí i Domènech, 1st Marquess of Dalí de Púbol gcYC was a Spanish surrealist artist renowned for his technical skill, precise draftsmanship and the striking and bizarre images in his work. Born in Figueres, Catalonia, Dalí received his formal education in fine arts in Madrid.",
     images: {
-      lg: 'dollop-lg.png',
-      md: 'dollop-md.png',
-      sm: 'dollop-sm.png',
+      lg: 'dali-lg.png',
+      md: 'dali-md.png',
+      sm: 'dali-sm.png',
       ipfs: 'https://gateway.pinata.cloud/ipfs/QmYD9AtzyQPjSa9jfZcZq88gSaRssdhGmKqQifUDjGFfXm/dollop.png',
-      blur: 'dollop-blur.png',
+      blur: 'dali-blur.png',
     },
     sortOrder: 999,
     bunnyId: 6,
   },
   {
-    name: 'Twinkle',
-    description: "Three guesses what's put that twinkle in those eyes! (Hint: it's CAKE)",
+    name: 'Qi Baishi',
+    description: "Qi Baishi was a Chinese painter, noted for the whimsical, often playful style of his works. Born to a peasant family from Xiangtan, Hunan, Qi became a carpenter at 14, and learned to paint by himself. When he came across the Mustard Seed Garden Manual of Painting, that sparked his interest to paint.",
     images: {
-      lg: 'twinkle-lg.png',
-      md: 'twinkle-md.png',
-      sm: 'twinkle-sm.png',
+      lg: 'qibaishi-lg.png',
+      md: 'qibaishi-md.png',
+      sm: 'qibaishi-sm.png',
       ipfs: 'https://gateway.pinata.cloud/ipfs/QmYD9AtzyQPjSa9jfZcZq88gSaRssdhGmKqQifUDjGFfXm/twinkle.png',
-      blur: 'twinkle-blur.png',
+      blur: 'qibaishi-blur.png',
     },
     sortOrder: 999,
     bunnyId: 7,
   },
+  /*
   {
     name: 'Swapsies',
     description: 'These bunnies love nothing more than swapping pancakes. Especially on BSC.',
@@ -195,6 +198,7 @@ const Nfts: Nft[] = [
     sortOrder: 999,
     bunnyId: 4,
   },
+ */
 ]
 
 export default Nfts

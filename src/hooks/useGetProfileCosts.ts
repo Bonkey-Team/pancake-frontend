@@ -17,9 +17,9 @@ const useGetProfileCosts = () => {
       try {
         const profileContract = getProfileContract()
         const [numberCakeToReactivate, numberCakeToRegister, numberCakeToUpdate] = await makeBatchRequest([
-          profileContract.methods.numberCakeToReactivate().call,
-          profileContract.methods.numberCakeToRegister().call,
-          profileContract.methods.numberCakeToUpdate().call,
+          profileContract.methods.numberBnkyToReactivate().call,
+          profileContract.methods.numberBnkyToRegister().call,
+          profileContract.methods.numberBnkyToUpdate().call,
         ])
 
         setCosts({
@@ -28,6 +28,7 @@ const useGetProfileCosts = () => {
           numberCakeToUpdate: new BigNumber(numberCakeToUpdate as string),
         })
       } catch (error) {
+        console.log(error)
         toastError('Error', 'Could not retrieve CAKE costs for profile')
       }
     }

@@ -35,12 +35,12 @@ const config: MenuEntry[] = [
     icon: 'TicketIcon',
     href: '/lottery',
   },
-  /*
   {
     label: 'Collectibles',
     icon: 'NftIcon',
     href: '/collectibles',
   },
+  /*
   {
     label: 'Team Battle',
     icon: 'TeamBattleIcon',
@@ -55,11 +55,11 @@ const config: MenuEntry[] = [
     label: 'Teams & Profile',
     icon: 'GroupsIcon',
     items: [
-        /*
       {
         label: 'Leaderboard',
         href: '/teams',
       },
+        /*
       {
         label: 'Task Center',
         href: '/profile/tasks',

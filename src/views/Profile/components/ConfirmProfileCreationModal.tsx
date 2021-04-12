@@ -3,7 +3,7 @@ import { Modal, Flex, Text } from 'plkit'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import useI18n from 'hooks/useI18n'
-import { useCake, usePancakeRabbits, useProfile } from 'hooks/useContract'
+import { useBnky, usePancakeRabbits, useProfile } from 'hooks/useContract'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { fetchProfile } from 'state/profile'
 import { useToast } from 'state/hooks'
@@ -33,7 +33,7 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
   const pancakeRabbitsContract = usePancakeRabbits()
   const dispatch = useDispatch()
   const { toastSuccess } = useToast()
-  const cakeContract = useCake()
+  const bnkyContract = useBnky()
 
   const {
     isApproving,
@@ -45,7 +45,7 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
   } = useApproveConfirmTransaction({
     onRequiresApproval: async () => {
       try {
-        const response = await cakeContract.methods.allowance(account, profileContract.options.address).call()
+        const response = await bnkyContract.methods.allowance(account, profileContract.options.address).call()
         const currentAllowance = new BigNumber(response)
         return currentAllowance.gte(minimumCakeRequired)
       } catch (error) {
@@ -53,7 +53,7 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
       }
     },
     onApprove: () => {
-      return cakeContract.methods.approve(profileContract.options.address, allowance.toJSON()).send({ from: account })
+      return bnkyContract.methods.approve(profileContract.options.address, allowance.toJSON()).send({ from: account })
     },
     onConfirm: () => {
       return profileContract.methods
@@ -74,7 +74,7 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
       </Text>
       <Flex justifyContent="space-between" mb="16px">
         <Text>{TranslateString(999, 'Cost')}</Text>
-        <Text>{TranslateString(999, `${REGISTER_COST} CAKE`, { num: REGISTER_COST })}</Text>
+        <Text>{TranslateString(999, `${REGISTER_COST} BNKY`, { num: REGISTER_COST })}</Text>
       </Flex>
       <ApproveConfirmButtons
         isApproveDisabled={isConfirmed || isConfirming || isApproved}

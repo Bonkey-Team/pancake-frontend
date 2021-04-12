@@ -56,11 +56,11 @@ const PauseProfilePage: React.FC<PauseProfilePageProps> = ({ onDismiss }) => {
       <Text as="p" color="textSubtle" mb="24px">
         {TranslateString(
           999,
-          "While your profile is suspended, you won't be able to earn points, but your achievements and points will stay associated with your profile",
+          "You can have another chance to win lucky points if you enable profile again!",
         )}
       </Text>
       <Text as="p" color="textSubtle" mb="24px">
-        {TranslateString(999, `Cost to reactivate in future: ${getBalanceNumber(numberCakeToReactivate)} CAKE`)}
+        {TranslateString(999, `Cost to reactivate in future: ${getBalanceNumber(numberCakeToReactivate)} BNKY`)}
       </Text>
       <label htmlFor="acknowledgement" style={{ cursor: 'pointer', display: 'block', marginBottom: '24px' }}>
         <Flex alignItems="center">

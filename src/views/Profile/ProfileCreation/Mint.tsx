@@ -4,8 +4,8 @@ import { Card, CardBody, Heading, Text } from 'plkit'
 import { useWeb3React } from '@web3-react/core'
 import useI18n from 'hooks/useI18n'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
-import { useCake, useBunnyFactory } from 'hooks/useContract'
-import useHasCakeBalance from 'hooks/useHasCakeBalance'
+import { useBnky, useBunnyFactory } from 'hooks/useContract'
+import useHasBnkyBalance from 'hooks/useHasBnkyBalance'
 import nftList from 'config/constants/nfts'
 import SelectionCard from '../components/SelectionCard'
 import NextStepButton from '../components/NextStepButton'
@@ -14,17 +14,17 @@ import useProfileCreation from './contexts/hook'
 import { MINT_COST, STARTER_BUNNY_IDS } from './config'
 
 const nfts = nftList.filter((nft) => STARTER_BUNNY_IDS.includes(nft.bunnyId))
-const minimumCakeBalanceToMint = new BigNumber(MINT_COST).multipliedBy(new BigNumber(10).pow(18))
+const minimumBnkyBalanceToMint = new BigNumber(MINT_COST).multipliedBy(new BigNumber(10).pow(18))
 
 const Mint: React.FC = () => {
   const [bunnyId, setBunnyId] = useState(null)
   const { actions, minimumCakeRequired, allowance } = useProfileCreation()
 
   const { account } = useWeb3React()
-  const cakeContract = useCake()
+  const bnkyContract = useBnky()
   const bunnyFactoryContract = useBunnyFactory()
   const TranslateString = useI18n()
-  const hasMinimumCakeRequired = useHasCakeBalance(minimumCakeBalanceToMint)
+  const hasMinimumBnkyRequired = useHasBnkyBalance(minimumBnkyBalanceToMint)
   const {
     isApproving,
     isApproved,
@@ -36,7 +36,7 @@ const Mint: React.FC = () => {
     onRequiresApproval: async () => {
       // TODO: Move this to a helper, this check will be probably be used many times
       try {
-        const response = await cakeContract.methods.allowance(account, bunnyFactoryContract.options.address).call()
+        const response = await bnkyContract.methods.allowance(account, bunnyFactoryContract.options.address).call()
         const currentAllowance = new BigNumber(response)
         return currentAllowance.gte(minimumCakeRequired)
       } catch (error) {
@@ -44,7 +44,7 @@ const Mint: React.FC = () => {
       }
     },
     onApprove: () => {
-      return cakeContract.methods
+      return bnkyContract.methods
         .approve(bunnyFactoryContract.options.address, allowance.toJSON())
         .send({ from: account })
     },
@@ -65,7 +65,7 @@ const Mint: React.FC = () => {
       <Text as="p">{TranslateString(786, 'Every profile starts by making a “starter” collectible (NFT).')}</Text>
       <Text as="p">{TranslateString(788, 'This starter will also become your first profile picture.')}</Text>
       <Text as="p" mb="24px">
-        {TranslateString(790, 'You can change your profile pic later if you get another approved Pancake Collectible.')}
+        {TranslateString(790, 'You can change your profile pic later if you get another approved Bonkey Collectible.')}
       </Text>
       <Card mb="24px">
         <CardBody>
@@ -76,7 +76,7 @@ const Mint: React.FC = () => {
             {TranslateString(794, 'Choose wisely: you can only ever make one starter collectible!')}
           </Text>
           <Text as="p" mb="24px" color="textSubtle">
-            {TranslateString(999, `Cost: ${MINT_COST} CAKE`, { num: MINT_COST })}
+            {TranslateString(999, `Cost: ${MINT_COST} BNKY`, { num: MINT_COST })}
           </Text>
           {nfts.map((nft) => {
             const handleChange = (value: string) => setBunnyId(parseInt(value, 10))
@@ -89,21 +89,21 @@ const Mint: React.FC = () => {
                 image={`/images/nfts/${nft.images.md}`}
                 isChecked={bunnyId === nft.bunnyId}
                 onChange={handleChange}
-                disabled={isApproving || isConfirming || isConfirmed || !hasMinimumCakeRequired}
+                disabled={isApproving || isConfirming || isConfirmed || !hasMinimumBnkyRequired}
               >
                 <Text bold>{nft.name}</Text>
               </SelectionCard>
             )
           })}
-          {!hasMinimumCakeRequired && (
+          {!hasMinimumBnkyRequired && (
             <Text color="failure" mb="16px">
-              {TranslateString(1098, `A minimum of ${MINT_COST} CAKE is required`)}
+              {TranslateString(1098, `A minimum of ${MINT_COST} BNKY is required`)}
             </Text>
           )}
           <ApproveConfirmButtons
             isApproveDisabled={bunnyId === null || isConfirmed || isConfirming || isApproved}
             isApproving={isApproving}
-            isConfirmDisabled={!isApproved || isConfirmed || !hasMinimumCakeRequired}
+            isConfirmDisabled={!isApproved || isConfirmed || !hasMinimumBnkyRequired}
             isConfirming={isConfirming}
             onApprove={handleApprove}
             onConfirm={handleConfirm}

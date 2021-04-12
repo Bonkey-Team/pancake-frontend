@@ -118,7 +118,7 @@ const PublicProfile = () => {
             </Status>
           </CardHeader>
           <CardBody>
-            <StatBox icon={PrizeIcon} title={profile.points} subtitle={TranslateString(999, 'Points')} mb="24px" />
+            <StatBox icon={PrizeIcon} title={profile.points} subtitle={TranslateString(999, 'Lucky BNKY Points')} mb="24px" />
             <Section>
               <Heading as="h4" size="md" mb="16px">
                 {TranslateString(1092, 'Achievements')}
