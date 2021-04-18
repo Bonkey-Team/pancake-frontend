@@ -7,7 +7,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'BNKY',
     lpAddresses: {
       97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
-      56: '0xC46180BEDf5C78e536F511D00e535Ca8B63DFdA8',
+      56: '0xAdc8e9B18b671DF686acCe0543F086293f2ef886',
     },
     token: tokens.banana,
     quoteToken: tokens.wbnb,
@@ -17,7 +17,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'BNKY-BNB LP',
     lpAddresses: {
       97: '0xe70b7523f4bffa1f2e88d2ba709afd026030f412',
-      56: '0x61bAF8000F91C1Fc7BC784b37DEeE49A15Ed005a',
+      56: '0xe3dd4fc17cbee436c1c14e32b2c21c0afff33813',
     },
     token: tokens.bnky,
     quoteToken: tokens.wbnb,

@@ -15,7 +15,7 @@ const tokens = {
   bnky: {
     symbol: 'BNKY',
     address: {
-      56: '0xc46180bedf5c78e536f511d00e535ca8b63dfda8',
+      56: '0xAdc8e9B18b671DF686acCe0543F086293f2ef886',
       97: '',
     },
     decimals: 18,
