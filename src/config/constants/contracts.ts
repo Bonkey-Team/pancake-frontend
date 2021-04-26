@@ -20,15 +20,15 @@ export default {
     97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
   },
   pancakeProfile: {
-    56: '0x552b15b3866ac8ac86850957a83cb7bbe9ebfb88',
+    56: '0xaA6a816856daC76d1a796D6fbb50b22db3073dDe',
     97: '0x4B683C7E13B6d5D7fd1FeA9530F451954c1A7c8A',
   },
   pancakeRabbits: {
-    56: '0xb0e10cb07f953d102e88a1027555c76a281eb188',
+    56: '0x2e556e732c9762bcefF399AdF57018fb93998974',
     97: '0x60935F36e4631F73f0f407e68642144e07aC7f5E',
   },
   bunnyFactory: {
-    56: '0x11c90e9ecd0aedd721fdaa6eb3865ce92c7200ab',
+    56: '0xDA714a1aF4a33344F8bC0D42fa783e5d55F6ddfa',
     97: '0x707CBF373175fdB601D34eeBF2Cf665d08f01148',
   },
   claimRefund: {
