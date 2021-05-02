@@ -192,9 +192,20 @@ export const useGetApiPrices = () => {
 
 export const useGetApiPrice = (token: string) => {
   const prices = useGetApiPrices()
+  const cakeBnbFarm = useFarmFromPid(1)
+  const bnbBusdFarm = useFarmFromPid(2)
 
   if (!prices) {
     return null
+  }
+
+  if(token === 'BNKY') {
+      const ZERO = new BigNumber(0)
+
+      const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
+      const cakeBusdPrice = cakeBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(cakeBnbFarm.tokenPriceVsQuote) : ZERO
+
+      return cakeBusdPrice.toNumber() / 1E18
   }
 
   return prices[token.toLowerCase()]
