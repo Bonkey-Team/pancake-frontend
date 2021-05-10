@@ -14,7 +14,7 @@ const farms: FarmConfig[] = [
   },
   {
     pid: 1,
-    lpSymbol: 'BNKY-BNB LP',
+    lpSymbol: 'BNKY-BNB-V1  LP',
     lpAddresses: {
       97: '0xe70b7523f4bffa1f2e88d2ba709afd026030f412',
       56: '0xe3dd4fc17cbee436c1c14e32b2c21c0afff33813',
@@ -804,17 +804,17 @@ const farms: FarmConfig[] = [
     token: tokens.busd,
     quoteToken: tokens.wbnb,
   },
-  /*
   {
     pid: 3,
-    lpSymbol: 'ADA-BNB LP',
+    lpSymbol: 'BNKY-BNB-V2 LP',
     lpAddresses: {
       97: '0xcbe3282a562e23b8c61ed04bb72ffdbb9233b1ce',
-      56: '0xba51d1ab95756ca4eab8737ecd450cd8f05384cf',
+      56: '0xc8048de9C4623020FaF82773e91C61882160745b',
     },
     token: tokens.ada,
     quoteToken: tokens.wbnb,
   },
+  /*
   {
     pid: 4,
     lpSymbol: 'BAND-BNB LP',
