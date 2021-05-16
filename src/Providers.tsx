@@ -15,11 +15,9 @@ const Providers: React.FC = ({ children }) => {
       <Provider store={store}>
         <HelmetProvider>
           <ThemeContextProvider>
-            <LanguageContextProvider>
               <RefreshContextProvider>
                 <ModalProvider>{children}</ModalProvider>
               </RefreshContextProvider>
-            </LanguageContextProvider>
           </ThemeContextProvider>
         </HelmetProvider>
       </Provider>

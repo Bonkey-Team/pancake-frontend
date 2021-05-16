@@ -10,8 +10,11 @@ const initialState: PriceState = {
 
 // Thunks
 export const fetchPrices = createAsyncThunk<PriceApiResponse>('prices/fetch', async () => {
-  const response = await fetch('https://api.pancakeswap.com/api/v1/price')
-  const data = (await response.json()) as PriceApiResponse
+  // const response = await fetch('https://api.pancakeswap.com/api/v1/price')
+  // const data = (await response.json()) as PriceApiResponse
+  let data
+  data.update_at = Date.now() 
+  data.prices.BUSD  = 1
 
   // Return normalized token names
   return {

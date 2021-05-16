@@ -21,6 +21,16 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://www.bonkey.org/',
   },
+  doge: {
+    symbol: 'DOGE',
+    address: {
+      56: '0xba2ae424d960c26247dd6c32edc70b295c744c43',
+      97: '',
+    },
+    decimals: 8,
+    projectLink: 'https://dogecoin.com/',
+  },
+
   txl: {
     symbol: 'TXL',
     address: {

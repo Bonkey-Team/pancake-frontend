@@ -186,26 +186,33 @@ export const useFetchPriceList = () => {
 }
 
 export const useGetApiPrices = () => {
-  const prices: PriceState['data'] = useSelector((state: State) => state.prices.data)
+  // const prices: PriceState['data'] = useSelector((state: State) => state.prices.data)
+  const bnbBusdFarm = useFarmFromPid(2)
+  const bnkyBnbFarm = useFarmFromPid(3)
+  const dogeBnbFarm = useFarmFromPid(5)
+
+  const ZERO = new BigNumber(0)
+
+  const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
+  const bnkyBusdPrice = bnkyBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(bnkyBnbFarm.tokenPriceVsQuote) : ZERO
+  const dogeBusdPrice = dogeBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(dogeBnbFarm.tokenPriceVsQuote) : ZERO
+
+  console.log(bnbBusdPrice, bnkyBusdPrice, dogeBusdPrice)
+
+  const prices = {
+      wbnb : bnbBusdPrice,
+      bnky : bnkyBusdPrice,
+      doge : dogeBusdPrice
+  } 
+
   return prices
 }
 
 export const useGetApiPrice = (token: string) => {
   const prices = useGetApiPrices()
-  const cakeBnbFarm = useFarmFromPid(1)
-  const bnbBusdFarm = useFarmFromPid(2)
 
   if (!prices) {
     return null
-  }
-
-  if(token === 'BNKY') {
-      const ZERO = new BigNumber(0)
-
-      const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
-      const cakeBusdPrice = cakeBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(cakeBnbFarm.tokenPriceVsQuote) : ZERO
-
-      return cakeBusdPrice.toNumber() / 1E18
   }
 
   return prices[token.toLowerCase()]

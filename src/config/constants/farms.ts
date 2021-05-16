@@ -811,20 +811,20 @@ const farms: FarmConfig[] = [
       97: '0xcbe3282a562e23b8c61ed04bb72ffdbb9233b1ce',
       56: '0xc8048de9C4623020FaF82773e91C61882160745b',
     },
-    token: tokens.ada,
+    token: tokens.bnky,
+    quoteToken: tokens.wbnb,
+  },
+  {
+    pid: 5,
+    lpSymbol: 'DOGE-BNB LP',
+    lpAddresses: {
+      97: '0xcbe3282a562e23b8c61ed04bb72ffdbb9233b1ce',
+      56: '0xac109C8025F272414fd9e2faA805a583708A017f',
+    },
+    token: tokens.doge,
     quoteToken: tokens.wbnb,
   },
   /*
-  {
-    pid: 4,
-    lpSymbol: 'BAND-BNB LP',
-    lpAddresses: {
-      97: '0xcbe3282a562e23b8c61ed04bb72ffdbb9233b1ce',
-      56: '0xc639187ef82271d8f517de6feae4faf5b517533c',
-    },
-    token: tokens.band,
-    quoteToken: tokens.wbnb,
-  },
   {
     pid: 5,
     lpSymbol: 'DOT-BNB LP',
