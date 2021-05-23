@@ -51,7 +51,7 @@ const App: React.FC = () => {
   useEagerConnect()
   useFetchPublicData()
   useFetchProfile()
-  useFetchPriceList()
+  // useFetchPriceList()
 
   return (
     <Router history={history}>
